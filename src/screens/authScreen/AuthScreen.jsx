@@ -1,8 +1,11 @@
 import styles from "./AuthScreen.module.css";
 import Icons from "../../constants/Icons";
+import MobileNav1 from "../../components/mobilenav1/MobileNav1";
+
 const AuthScreen = () => {
   return (
     <div className={styles.container}>
+      <MobileNav1 />
       <div className={styles["link-container"]}>
         <div className={styles["logo"]}>
           <img src={Icons.WhiteCircle} />

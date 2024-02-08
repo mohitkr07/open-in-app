@@ -232,6 +232,7 @@
   .container {
     background-image: none;
     background-color: var(--BG_COLOR);
+    flex-direction: column;
   }
   .link-container {
     display: none;
