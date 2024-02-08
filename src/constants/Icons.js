@@ -17,6 +17,7 @@ import ZigZag from "../assets/icons/zigzag.svg";
 import CalendarIcon from "../assets/icons/calendar.svg";
 import DashboardIcon from "../assets/icons/dashboard.svg";
 import ExcelLogo from "../assets/icons/excel.svg";
+import CrossIcon from "../assets/icons/cross.png";
 
 const Icons = {
   AppleIcon,
@@ -38,6 +39,7 @@ const Icons = {
   CalendarIcon,
   DashboardIcon,
   ExcelLogo,
+  CrossIcon,
 };
 
 export default Icons;

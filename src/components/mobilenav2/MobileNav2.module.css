@@ -1,0 +1,78 @@
+:root {
+  --PRIMARY: #605bff;
+  --SECONDARY: #999999;
+  --PRIMARY_TEXT: #000000;
+  --SECONDARY_TEXT: #858585;
+  --LINK: #346bd4;
+  --ALERT_RED: #d33030;
+  --LIGHT_GOHAN: #ffffff;
+  --BG_COLOR: #f8faff;
+  --FIELD_COLOR: #eaeaea;
+}
+
+.container {
+  width: 100%;
+  height: 5rem;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 1.25rem;
+  justify-content: space-between;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.logo {
+  position: relative;
+  align-self: flex-start;
+  height: 26px;
+  width: 26px;
+}
+.logo img {
+  width: 106%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo-container p {
+  font-size: 1.5rem;
+  color: var(--PRIMARY_TEXT);
+  font-weight: 600;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.notification-icon {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile {
+  height: 1.875rem;
+  width: 1.875rem;
+  background-color: var(--PRIMARY);
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: none;
+  }
+}

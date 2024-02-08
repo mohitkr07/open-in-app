@@ -1,8 +1,27 @@
 import styles from "./AuthScreen.module.css";
 import Icons from "../../constants/Icons";
 import MobileNav1 from "../../components/mobilenav1/MobileNav1";
+import { GoogleLogin, googleLogout } from "@react-oauth/google";
+import { jwtDecode } from "jwt-decode";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AuthScreen = () => {
+  const navigate = useNavigate();
+
+  const handleLoginSuccess = (credentialResponse) => {
+    const response = jwtDecode(credentialResponse.credential);
+    console.log(response);
+    localStorage.setItem("user", JSON.stringify(response));
+
+    setTimeout(() => {
+      navigate("/upload");
+    }, 500);
+  };
+
+  const handleLoginError = () => {
+    console.log("Login Failed");
+  };
   return (
     <div className={styles.container}>
       <MobileNav1 />
@@ -30,10 +49,16 @@ const AuthScreen = () => {
           </div>
 
           <div className={styles["login-options"]}>
-            <div className={styles["option"]}>
-              <img src={Icons.GoogleIcon} />
-              <p>Sign in with Google</p>
-            </div>
+            {/* <div className={styles["option"]}> */}
+            {/* <img src={Icons.GoogleIcon} />
+              <p>Sign in with Google</p> */}
+            <GoogleLogin
+              size="medium"
+              // width="195px"
+              onSuccess={handleLoginSuccess}
+              onError={handleLoginError}
+            />
+            {/* </div> */}
             <div className={styles["option"]}>
               <img src={Icons.AppleIcon} />
               <p>Sign in with Apple</p>
