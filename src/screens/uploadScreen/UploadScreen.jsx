@@ -247,7 +247,7 @@ const UploadScreen = () => {
                     <span onClick={handleUpload}>browse</span>
                   </p>
                 ) : (
-                  <p onClick={handleUpload}>
+                  <p>
                     Upload you excel sheet
                     <span onClick={handleUpload}> here</span>
                   </p>
