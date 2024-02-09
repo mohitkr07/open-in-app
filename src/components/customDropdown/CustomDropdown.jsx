@@ -13,10 +13,10 @@ const CustomDropdown = ({ onSelect, data }) => {
 
   return (
     <div
-      style={{
-        borderBottomLeftRadius: showDropdown ? "0" : "8px",
-        borderBottomRightRadius: showDropdown ? "0" : "8px",
-      }}
+      // style={{
+      //   borderBottomLeftRadius: showDropdown ? "0" : "8px",
+      //   borderBottomRightRadius: showDropdown ? "0" : "8px",
+      // }}
       className={styles.container}
     >
       <div

@@ -28,7 +28,7 @@
 
 .table {
   background-color: var(--GOKU);
-  padding: 1rem;
+  padding: 0.5rem 1rem 1rem 1rem;
   border-radius: 8px;
   overflow-x: auto;
 }
