@@ -1,6 +1,7 @@
 import styles from "./Uploads.module.css";
 import Icons from "../../constants/Icons";
 import CustomDropdown from "../customDropdown/CustomDropdown";
+import Colors from "../../constants/Colors";
 
 const Uploads = ({ jsonData, onSelectTag, removeTag }) => {
   const handleOnselect = (ind, txt) => {
@@ -35,7 +36,13 @@ const Uploads = ({ jsonData, onSelectTag, removeTag }) => {
                 <tr className={styles["row-tr"]}>
                   <td>{(ind + 1).toString().padStart(2, "0")}</td>
                   <td>
-                    <a href={`https://${item.links}`} target="_blank">
+                    <a
+                      style={{
+                        color: Colors.PRIMARY,
+                      }}
+                      href={`https://${item.links}`}
+                      target="_blank"
+                    >
                       {item.links}
                     </a>
                   </td>
