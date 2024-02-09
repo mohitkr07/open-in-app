@@ -19,7 +19,7 @@ const Uploads = ({ jsonData, onSelectTag, removeTag }) => {
         <table>
           <thead>
             <tr className={styles["head-tr"]}>
-              <th>SI No.</th>
+              <th style={{ minWidth: "5rem" }}>SI No.</th>
               <th>Links</th>
               <th>Prefix</th>
               <th>Add Tags</th>

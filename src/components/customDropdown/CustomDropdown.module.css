@@ -14,7 +14,7 @@
 }
 .container {
   /* width: 100%; */
-  width: 9.375rem;
+  width: 11.5rem;
   height: 2.5rem;
   display: flex;
   align-items: center;
@@ -26,6 +26,7 @@
   cursor: pointer;
   position: relative;
   user-select: none;
+  padding: 0 22px 0 18px;
 }
 .dropdown {
   width: 100%;
@@ -38,7 +39,7 @@
 }
 
 .dropdown p {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 400;
   font-family: "Figtree", sans-serif;
   color: #000000;
@@ -69,8 +70,10 @@
   align-items: center;
   padding: 15px;
   user-select: none;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   border-radius: 8px;
+  font-family: "Figtree", sans-serif;
+  font-weight: 400;
 }
 .list p:hover {
   background-color: var(--GOKU);

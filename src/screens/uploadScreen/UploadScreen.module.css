@@ -213,4 +213,8 @@
   .upload-btn {
     font-size: 0.75rem;
   }
+
+  .upload-view {
+    gap: 3rem;
+  }
 }

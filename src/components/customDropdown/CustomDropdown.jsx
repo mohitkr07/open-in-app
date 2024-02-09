@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./CustomDropdown.module.css";
+import Colors from "../../constants/Colors";
 
 const CustomDropdown = ({ onSelect, data }) => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -24,7 +25,7 @@ const CustomDropdown = ({ onSelect, data }) => {
         className={styles.dropdown}
       >
         <p>{"Selected Tags"}</p>
-        <i className="fa-solid fa-angle-down" />
+        <i style={{ color: "#999CA0" }} className="fa-solid fa-angle-down" />
       </div>
 
       {showDropdown && (
