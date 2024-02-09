@@ -18,6 +18,10 @@ import CalendarIcon from "../assets/icons/calendar.svg";
 import DashboardIcon from "../assets/icons/dashboard.svg";
 import ExcelLogo from "../assets/icons/excel.svg";
 import CrossIcon from "../assets/icons/cross.png";
+import GithubIcon1 from "../assets/icons/github1.svg";
+import TwitterIcon1 from "../assets/icons/twitter1.svg";
+import LlinkedInIcon1 from "../assets/icons/linkedIn1.svg";
+import DiscordIcon1 from "../assets/icons/discord1.svg";
 
 const Icons = {
   AppleIcon,
@@ -40,6 +44,10 @@ const Icons = {
   DashboardIcon,
   ExcelLogo,
   CrossIcon,
+  GithubIcon1,
+  TwitterIcon1,
+  LlinkedInIcon1,
+  DiscordIcon1,
 };
 
 export default Icons;

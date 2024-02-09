@@ -124,6 +124,12 @@ const AuthScreen = () => {
             <p onClick={Warning2}>Register here</p>
           </div>
         </div>
+        <div className={styles["social-links-mobile"]}>
+          <img src={Icons.GithubIcon1} alt="Github" />
+          <img src={Icons.TwitterIcon1} alt="Twitter" />
+          <img src={Icons.LlinkedInIcon1} alt="LinkedIn" />
+          <img src={Icons.DiscordIcon1} alt="Discord" />
+        </div>
       </div>
     </div>
   );

@@ -233,6 +233,7 @@
     background-image: none;
     background-color: var(--BG_COLOR);
     flex-direction: column;
+    min-height: 100vh;
   }
   .link-container {
     display: none;
@@ -243,6 +244,11 @@
     height: 100%;
     display: flex;
     justify-content: center;
+  }
+  .social-links-mobile {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.6rem;
   }
 }
 @media screen and (max-width: 400px) {
@@ -271,5 +277,11 @@
   .register-option > p:last-child {
     color: var(--LINK);
     cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .social-links-mobile {
+    display: none;
   }
 }
