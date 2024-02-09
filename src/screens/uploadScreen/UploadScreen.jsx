@@ -7,6 +7,7 @@ import * as XLSX from "xlsx";
 import Colors from "../../constants/Colors";
 import MobileNav2 from "../../components/mobilenav2/MobileNav2";
 import MobileMenu from "../../components/mobileMenu/MobileMenu";
+import { ToastContainer, toast } from "react-toastify";
 
 const MenuItem = ({ icon, menuTitle }) => (
   <div
@@ -28,6 +29,8 @@ const menuItems = [
   { icon: Icons.NotificationIcon_2, menuTitle: "Notification" },
   { icon: Icons.SettingIcon, menuTitle: "Settings" },
 ];
+
+const screenWidth = window.innerWidth;
 
 const UploadScreen = () => {
   const [showMobileNav, setShowMobileNav] = useState(false);
@@ -52,11 +55,21 @@ const UploadScreen = () => {
     setUploading(true);
     setUploadedData(jsonData);
     setUploadedFileName(fileName);
+
     setTimeout(() => {
       setJsonData(null);
       setFileName(null);
       setUploading(false);
       setShowTable(true);
+      toast.success("Upload successful!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       uploadRef.current.value = null;
     }, 1000);
   };
@@ -74,9 +87,28 @@ const UploadScreen = () => {
       const sheetName = workbook.SheetNames[0];
       const worksheet = workbook.Sheets[sheetName];
 
-      const sheetJson = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+      const expectedHeaders = ["id", "links", "prefix", "select tags"];
 
-      const headers = sheetJson[0];
+      const headers = XLSX.utils.sheet_to_json(worksheet, { header: 1 })[0];
+
+      const isValidFile = expectedHeaders.every((header) =>
+        headers.includes(header)
+      );
+
+      if (!isValidFile) {
+        toast.warning("Incorrect file structure/format!", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        return;
+      }
+
+      const sheetJson = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
       sheetJson.shift();
 
@@ -133,7 +165,6 @@ const UploadScreen = () => {
 
   const picture = JSON.parse(localStorage.getItem("user"))?.picture;
 
-  // Drag and drop event handlers
   const handleDragEnter = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -210,10 +241,15 @@ const UploadScreen = () => {
                       Remove
                     </p>
                   </>
-                ) : (
+                ) : screenWidth > 768 ? (
                   <p>
                     Drop your excel sheet here or{" "}
                     <span onClick={handleUpload}>browse</span>
+                  </p>
+                ) : (
+                  <p onClick={handleUpload}>
+                    Upload you excel sheet
+                    <span onClick={handleUpload}> here</span>
                   </p>
                 )}
                 <input
@@ -261,6 +297,7 @@ const UploadScreen = () => {
             ) : null}
           </div>
         </div>
+        <ToastContainer />
       </div>
     )
   );
